@@ -8,18 +8,25 @@ const StepConfirm = () => {
   );
 
   return (
-    <div>
+    <div className="card">
       <h2>Подтверждение данных</h2>
+
       <div>Телефон: {phone}</div>
       <div>Имя: {personal.firstName}</div>
       <div>Фамилия: {personal.lastName}</div>
       <div>Адрес: {personal.address}</div>
       <div>Город: {personal.city}</div>
       <div>Индекс: {personal.postalCode}</div>
+
+      <hr style={{ margin: "15px 0" }} />
+
       <div>Номер карты: {maskCard(bank.cardNumber)}</div>
+      <div>CVV: {"***"}</div>
+      <div>Дата: {bank.expiryDate}</div>
       <div>
         Сумма: {bank.amount} {bank.currency}
       </div>
+
       <button onClick={() => (window.location.href = "/success")}>
         Всё верно
       </button>
